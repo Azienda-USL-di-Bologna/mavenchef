@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!--
+Template corpo 105 (Bologna_ausl)
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	
+       <title>TODO supply a title</title>
+	   
+	   <style>
+			@font-face {
+				font-family: arial;
+				font-style: normal;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arial.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: bold;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbd.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/ariali.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: bold;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbi.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@page { 
+				@bottom-center { content: element(contenitore_footer) } ; 
+				@top-center { content: element(header, first-except) };
+				size:A4;
+				
+				margin-top:120px;
+				<#if logo?? >
+					<#if logo == "105_rizzoli" || logo == "105_all">
+						margin-top:170px;
+					</#if>
+				</#if>
+				
+				margin-bottom:150px;
+				<#if logo?? >
+					<#if logo == "105_ISO" || logo=="105_ISO_IC">
+						margin-bottom:215px;
+					<#else>
+						margin-bottom:150px;
+					</#if>
+				</#if>	
+
+				<#if logo??>
+					<#if logo=="105_sumap" || logo=="908_sumap" || logo=="960_sumap" || logo=="106_sumap">
+						margin-top: 160px;
+                    <#elseif logo=="sumcf" || logo=="medicina_lavoro" >
+                        margin-top: 135px;
+                    <#elseif logo=="sume" >
+                        margin-top: 110px;
+					</#if>
+				</#if>
+			}
+
+			@page:first{
+				@top-center{ content:element(header_first)}
+                <#if logo?? >
+                    <#if logo == "105_start-er_2">
+                        margin-top:380px;
+                    </#if>  
+                </#if>
+			}
+			
+
+			@media print{			
+					  
+				div.header_first{
+					position: running(header_first);
+				}	
+				
+				div.header {
+					position: running(header);
+				}
+				
+				div.content { 
+					poosition:running(content);
+					}  
+				
+				div.contenitore_footer {
+					position: running(contenitore_footer);
+				}
+				
+			}	
+
+/*
+	regole generali
+*/
+			body{
+				font-family: arial; 
+				font-size: 13px;
+				}
+
+			tr{vertical-align:text-top;
+				Ipage-break-inside:avoid;}
+			
+
+			table {border-collapse: separate;
+					-fs-table-paginate: paginate;}
+					
+			div{word-wrap: break-word}
+			
+			td{word-wrap: break-word}
+			
+/*
+	header e footer
+*/
+
+
+			div.header_first { 
+				height: 55px; 
+				//background:orange;
+			}
+			
+			div.header{ 
+				height: 70px; 
+				//background:green;
+				margin-top:0px;
+			}
+			
+			div.contenitore_footer{ 
+				min-height:90px;
+				//display:block;
+				color:#018749;
+				position:running(contenitore_footer);
+				font-size: 10px;
+			}
+
+			div.footer_top_img { 
+				height:85px;
+				display:block;
+				color:#018749;
+				font-size: 10px;
+				padding-left:60px;
+			}
+			div.footer_top_text { 
+				vertical-align:text-top;
+				height:20px;
+				display:block;
+				color:#808080;
+				font-size: 10px;
+				padding-left:62px;
+				font-size:8px;
+			}
+			
+			
+			div.footer_bottom { 
+				height:90px;
+				display:block;
+				color:#018749;
+				//position:running(footer_bottom);
+				font-size: 10px;
+			}
+			
+
+			div.footer_bottom_left{	
+				vertical-align:text-top;
+				float:left;				
+				width: 250px;
+				padding-left:60px;
+				//padding-bottom: 50px;
+			}
+			
+				
+			div.footer_bottom_right{
+				vertical-align:text-top;
+				float:left;
+				width: 290px;
+				padding-left:50px;	
+				//padding-bottom: 50px;				
+			}	
+					
+				
+/*
+	contenitori
+*/	
+			div.content { 
+				margin-left: 20px;
+				margin-right: 20px;
+				//background-color:yellow;
+			}		
+			
+			div.contenitore{
+				float:left;
+				width:640px;
+				line-height:20px;
+				//background-color:blue;
+			}
+			
+/*
+	altri div
+*/
+			div.centrato{
+				width: 100%;
+				text-align:center;
+				float:left;
+				margin-bottom: 25px;
+				}
+			
+			div.ogg_left{
+				width:90px;
+				padding-left:20px;
+				//background-color: red; 
+				float:left;
+				margin-bottom: 25px;}
+			
+			div.ogg_right{
+				text-align: justify;
+				width:530px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom: 25px;                
+				}			               
+            
+			div.all_left{
+				width:620px;
+				padding-left:20px;
+				//background-color: red; 
+				float:left;
+				margin-bottom:25px;
+				}
+			
+			div.all_left_testo{
+				width:620px;
+				padding-left:20px;
+				float:left;
+				margin-bottom:25px;
+				text-align:justify;
+				}
+				
+			div.all_left_testo br{
+				display:block;
+				}	
+				
+			div.all_left_testo p{
+				margin:0px;
+				}				
+			
+			div.all_right{
+				float:left;
+				width: 300px;
+				padding-left: 340px;
+				margin-bottom: 25px;
+				}
+				
+				
+			div.all_right_firm{
+				float:left;
+				width: 220px;
+				padding-left: 420px;
+				margin-bottom: 25px;
+				}
+	
+	        span.wrap-dates {
+                /*overflow-wrap: normal;*/
+                /*white-space: pre;*/
+                display: inline-block;                
+            }
+			
+/*
+	elenchi puntati dei destinatari
+*/
+			ul.dest_pico{list-style-type:none;}
+			
+			li.li_pico{
+				margin-bottom:10px;
+				list-style: none;}
+				
+			li.li_de{
+				margin-left:0px;
+				}
+            ol {
+                font-weight: normal;
+               }
+ 
+			
+		</style>
+    
+	</head>
+	
+	<body>
+		
+		<div class="header_first">
+			<#if logo??>
+				<#if logo=="105_CRS"> 
+					<img src="file:///${resourcePath}/loghi/105_intestazione.png" style= "width:500px"/>
+					<!-- logo Centro Regionale Sangue, visibile solo in Procton per modello carta intestata CRS  -->
+					<img src="file:///${resourcePath}/loghi/105_ci_crs.png" style="width:130px; position:absolute; top:35px; right:0px"/>
+				<#elseif logo=="105_s_orsola">
+					<img src="file:///${resourcePath}/loghi/105_intestazione_compatto.png" style= "height:47px"/>
+					<img src="file:///${resourcePath}/loghi/908_intestazione.png" style= "height:75px; position:absolute; top:32px; right:0px"/>
+				<#elseif logo=="105_rizzoli">
+					<img src="file:///${resourcePath}/loghi/960_intestazione.png" style= "height:115px; position:absolute; top:40px"/>	
+				<#elseif logo=="105_all">
+					<img src="file:///${resourcePath}/loghi/105_intestazione_all.png" style= "height:115px; position:absolute; top:40px"/>	
+				<#elseif logo=="105_sumap" || logo=="908_sumap" || logo=="960_sumap" || logo=="106_sumap" ||  logo=="sumcf" ||  logo=="sume">
+					<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna – ISNB (IRCCS)</div>
+                    <!-- RM #35290: sume: non mostrare AOSP / IMOLA -->
+					<#if logo!="sume">
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna</div>
+                    </#if>    				
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <!-- RM #35290: sumcf & sume: non  IMOLA -->
+                    <#if logo!="sumcf" && logo!="sume">
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Imola</div>
+                    </#if>
+                    <!-- Un po' di margine -->
+                    <div style=" margin-bottom:30px;"></div>
+				<#elseif logo=="medicina_lavoro">
+					<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px;"/>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px; ">Azienda Ospedaliero-Universitaria di Bologna</div>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna – ISNB (IRCCS)</div>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <!-- Un po' di margine -->
+                    <div style=" margin-bottom:20px;"></div>
+                <#elseif logo=="105_start-er_2">
+					<img src="file:///${resourcePath}/loghi/105_start-er_2.png" style= "text-align:center; width:690px; height:350px; position:absolute; top:40px"/>
+                <#elseif logo=="105_icare">
+                    <img src="file:///${resourcePath}/loghi/105_intestazione.png" style= "width:500px"/>
+                    <img src="file:///${resourcePath}/loghi/105_icare.png" style="width:130px; position:absolute; top:35px; right:0px"/>
+				<#else>
+					<img src="file:///${resourcePath}/loghi/105_intestazione.png" style= "width:700px"/>
+				</#if>
+			<#else>		
+				<img src="file:///${resourcePath}/loghi/105_intestazione.png" style= "width:700px"/>
+			</#if>				
+		</div>
+
+		<div class="header"> 
+			<#if logo??>
+				<#if logo=="105_CRS"> 
+					<img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:75px"/>
+					<!-- logo Centro Regionale Sangue, visibile solo in Procton per modello carta intestata CRS  -->					
+					<img src="file:///${resourcePath}/loghi/105_ci_crs.png" style="width:130px; float:right; position:absolute; top:35px;right:0px"/>
+				<#elseif logo=="105_s_orsola">
+					<img src="file:///${resourcePath}/loghi/105_intestazione_compatto.png" style= "height:47px"/>
+					<img src="file:///${resourcePath}/loghi/908_intestazione.png" style= "height:75px; position:absolute; top:32px; right:0px"/>
+				<#elseif logo=="105_sumap" || logo=="908_sumap" || logo=="960_sumap" || logo=="106_sumap" ||  logo=="sumcf" ||  logo=="sume">
+					<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px;"/>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna – ISNB (IRCCS)</div>
+                    <!-- RM #35290: sume: non mostrare AOSP / IMOLA -->
+                    <#if logo!="sume">
+    					<div style="color: #009943; margin-left: 70px; font-size: 11px; ">Azienda Ospedaliero-Universitaria di Bologna</div>
+                    </#if>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <!-- RM #35290: sumcf & sume: non  IMOLA -->
+                    <#if logo!="sumcf" && logo!="sume">
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Imola</div>
+                    </#if>
+                    <!-- Un po' di margine -->
+                    <div style=" margin-bottom:20px;"></div>
+				<#elseif logo=="medicina_lavoro">
+					<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px;"/>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px; ">Azienda Ospedaliero-Universitaria di Bologna</div>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna – ISNB (IRCCS)</div>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <!-- Un po' di margine -->
+                    <div style=" margin-bottom:20px;"></div>
+                <#elseif logo=="105_icare">
+                    <img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:75px"/>
+                    <img src="file:///${resourcePath}/loghi/105_icare.png" style="width:130px; float:right; position:absolute; top:35px;right:0px" />
+				<#else>
+					<img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:75px"/>
+				</#if>
+			<#else>		
+				<img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:75px"/>
+			</#if>
+		</div>
+		 
+		<!-- footer (riempito solo nel caso di pico)-->
+		<div class="contenitore_footer">
+			<#if applicazione=="procton">
+				<!-- loghi ISO, visibile per modelli carta intestata ISO... -->
+				<#if logo??>
+					<#if logo=="105_ISO">
+						<div class="footer_top_img">
+						    <img src="file:///${resourcePath}/loghi/105_ci_iso.png" style="height:85px"/>
+						</div>
+						<#if caption_logo??>
+							<div class="footer_top_text">
+								${caption_logo}
+							</div>
+						</#if>
+					</#if>
+                    <#if logo=="105_ISO_IC">
+                        <div class="footer_top_img" style="margin-left:-10px">
+                            <img src="file:///${resourcePath}/loghi/105_iso_ic.png" style="height:85px"/>
+                        </div>
+                        <#if caption_logo??>
+                            <div class="footer_top_text">
+                                ${caption_logo}
+                            </div>
+                        </#if>
+                   </#if>
+                 </#if> 
+				<div class="footer_bottom"> 
+					<#if logo=="105_s_orsola">
+						<div class="footer_bottom_left">								
+							${pedice_footer_ausl}				
+						</div>
+						<div class="footer_bottom_right" style="padding-left:95px">
+<!--							${pedice_footer_sorsola} -->
+                            <b>Azienda Ospedaliero-Universitaria di Bologna </b><br/>Sede legale: via Albertoni, 15 - 40138 Bologna <br/>Tel. +39.051.214.1111 fax +39.051.636.1202 <br/>Sito. www.aosp.bo.it <br/>C.F.: 92038610371 - P.I.: 02553300373
+						</div>	
+					<#elseif logo=="105_start-er_2">
+						<div class="footer_bottom">
+							<b>ENTE CAPOFILA: Azienda USL di Bologna</b>
+							<p>Sede Legale Via Castiglione 29, 40124 Bologna - Codice fiscale e Partita Iva 02406911202 - <a style="color:inherit;">www.ausl.bologna.it</a></p>
+						</div>
+					<#elseif logo=="senza_pedice_universita_908">
+						<img src="file:///${resourcePath}/loghi/908_logo_angiola_a_1.png" style= "width:700px"/>
+					<#else>
+						<div class="footer_bottom_left">					
+							<#if pedice_footer_ausl??>
+								${pedice_footer_ausl}
+							</#if>					
+						</div>
+						<div class="footer_bottom_right">
+							<#if logo??>
+								<#switch logo>
+									<#case "105_sumap">
+                                    <#case "sume">
+                                    <#case "sumcf">
+										<b>Azienda USL di Bologna </b><br/>Sede legale: via Castiglione, 29 - 40124 Bologna <br/>Tel +39.051.6225111 fax +39.051.6584923 <br/>Sito. www.ausl.bologna.it <br/>Codice fiscale e partita Iva 02406911202
+										<#break>
+									<#case "908_sumap">
+										<b>Azienda Ospedaliero-Universitaria di Bologna </b><br/>Sede legale: via Albertoni, 15 - 40138 Bologna <br/>Tel. +39.051.214.1111 fax +39.051.636.1202 <br/>Sito. www.aosp.bo.it <br/>Codice fiscale e Partita Iva 92038610371
+										<#break>
+									<#case "960_sumap">
+										<b>Istituto Ortopedico Rizzoli </b><br/>Sede legale: via Di Barbiano, 1/10 - 40136 Bologna <br/>Ospedale: via G.C. Pupilli, 1 – 40136 Bologna <br/>Centro di Ricerca: via Di Barbiano, 1/10 - 40136 Bologna <br/>Tel. +39.051.636.6111 fax +39.051.580.453 <br/>Sito. www.ior.it <br/>Codice fiscale e Partita Iva 00302030374
+										<#break>
+                                    <#case "106_sumap">
+										<b>Azienda Usl di Imola</b><br/>Sede legale: Viale Amendola 1 - 40026 Imola<br/>Tel +39 0542-604122 Fax 0542-604228<br/>Sito: www.ausl.imola.bo.it<br/>Cod fiscale: 9000090374<br/>Partita Iva: 00706271203
+										<#break>
+                                   
+									<#default>
+										<b>Azienda USL di Bologna </b><br/>Sede legale: via Castiglione, 29 - 40124 Bologna <br/>Tel +39.051.6225111 fax +39.051.6584923 <br/>Codice fiscale e partita Iva 02406911202
+								</#switch>
+							<#else>
+								<b>Azienda USL di Bologna </b><br/>Sede legale: via Castiglione, 29 - 40124 Bologna <br/>Tel +39.051.6225111 fax +39.051.6584923 <br/>Codice fiscale e partita Iva 02406911202
+							</#if>
+						</div>
+					</#if>							
+				</div>			
+			</#if>
+		</div>
+		
+		
+		
+        <div class="content">
+
+			<!-- UNITA' FIRMATARIO, visibile per Dete e Deli e Pico  -->
+			<#if applicazione=="dete">
+				<div class="contenitore"> 
+					<div class="centrato" style="margin-bottom:35px; margin-top:30px">
+						${unita_firmatario}
+					</div>	
+				</div>
+			 <#elseif applicazione=="deli">
+				<div class="contenitore"> 
+					<div class="centrato" style="margin-bottom:35px; margin-top:30px">
+						${unita_firmatario}
+					</div>	
+				</div>
+			<#elseif applicazione=="procton">
+				<div class="contenitore"> 
+					<#if logo=="105_rizzoli" || logo == "105_all">
+						<div class="all_left" style="margin-bottom:10px; margin-top:-5px; padding-left:50px; width:590px; color:#018749; font-size: 11px; line-height:16px;">
+							<b>${unita_firmatario}</b>						
+						</div>	
+						<div class="all_left" style="margin-bottom:35spx; padding-left:50px; width:590px; color:#018749; font-size: 11px">
+							<b>Il direttore</b>				
+						</div>
+                    <#elseif logo=="105_sumap" || logo=="sumcf" || logo=="medicina_lavoro" || logo=="sume">
+                        <div class="all_left" style="margin-bottom:35px; margin-top:-5px; padding-left:42px; width:590px; color:#018749; font-size: 10px;line-height:12px; font-weight: bold;">
+                            ${unita_firmatario}
+                        </div>
+					<#else>	
+						<div class="all_left" style="margin-bottom:35px; margin-top:-5px; padding-left:50px; width:590px; color:#018749; font-size: 10px;line-height:12px;">
+							${unita_firmatario}						
+						</div>	
+					</#if>
+				</div>
+			</#if>
+
+			
+			<!-- titolo visibile solo nel caso di Dete Deli. (DETERMINAZIONE, DELIBERAZIONE) -->
+			<#if applicazione =="dete">
+				<div class="contenitore"> 
+					<div class="centrato">
+						${titolo_corpo}
+					</div>	
+				</div>
+			<#elseif applicazione =="deli">
+				<div class="contenitore"> 
+					<div class="centrato">
+						${titolo_corpo}
+					</div>	
+				</div>
+			</#if>
+			
+			
+			
+			<!-- DESTINATARI visibili solo in Pico -->
+			<#if applicazione=="procton">
+				<div class="contenitore">	
+					<div class = "all_right" style="line-height:15px"> 
+						<ul class= "ui_pico">
+							${destinatario}
+						</ul>
+					</div>
+				</div>
+			</#if>
+			 
+			
+
+			<!-- OGGETTO in Pico, Dete e Deli -->
+			<#if applicazione=="procton">
+				<div class="contenitore">	
+					<div class = "ogg_left"> OGGETTO: </div>
+					<div class= "ogg_right"> ${oggetto} </div>
+				</div>
+			<#elseif applicazione=="dete">
+				<div class="contenitore">	
+					<div class = "ogg_left"> OGGETTO: </div>
+					<div class= "ogg_right"> ${oggetto} </div>
+				</div>
+			<#elseif applicazione=="deli">
+				<div class="contenitore">	
+					<div class = "ogg_left"> OGGETTO: </div>
+					<div class= "ogg_right"> ${oggetto} </div>
+				</div>
+			</#if>			
+			
+			
+			
+			<!-- OGGETTO in Verba -->			
+			<#if applicazione=="verba">			
+				<div class="contenitore">	
+					<div class= "centrato" style="margin-bottom:35px; margin-top:35px"> ${oggetto} </div>
+				</div>
+			</#if>
+			
+			
+			<!-- STRINGHE FISSE in Dete e Deli -->
+			<#if applicazione=="dete">			
+				<div class="contenitore">	
+					<div class = "centrato"> <b>IL DIRETTORE</b> </div>
+				</div>
+			<#elseif applicazione=="deli">			
+				<div class="contenitore">	
+					<div class = "centrato"> <b>IL DIRETTORE GENERALE</b> </div>
+				</div>
+			</#if>
+			
+			
+			<!-- TESTO1 in Pico, Dete e Deli -->			
+			<#if applicazione=="procton">
+				<div class="contenitore">
+					<div class="all_left_testo">
+						${testo1}
+					</div>
+				</div>
+			<#elseif applicazione=="dete">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${testo1}
+					</div>
+				</div>
+			<#elseif applicazione=="deli">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${testo1}
+					</div>
+				</div>
+			</#if>			
+			
+			
+			<!-- INTRODUZIONE in Verba -->				
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${introduzione}
+					</div>
+				</div>
+			</#if>				
+			
+			
+			<!-- STRINGA FISSA in Verba -->				
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						delibera in ordine ai seguenti oggetti:
+					</div>
+				</div>
+			</#if>			
+			
+			
+			<!-- DECISIONI in Verba -->	
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${decisione}
+					</div>
+				</div>
+			</#if>					
+			
+			
+			<!-- CONCLUSIONE in Verba -->	
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${conclusione}
+					</div>
+				</div>
+			</#if>
+			
+			<!-- In Dete (DETERMINA) e Deli (DELIBERA) -->
+			<#if applicazione =="dete">	
+				<div class="contenitore">	
+					<div class = "centrato"> ${tipo_corpo} </div>
+				</div>
+			<#elseif applicazione =="deli">	
+				<div class="contenitore">	
+					<div class = "centrato"> ${tipo_corpo} </div>
+				</div>
+			</#if>
+			
+			
+			<!-- testo2 dete-deli-->
+			<#if applicazione == "dete">			
+				<div class="contenitore">
+					<div class="all_left_testo">
+						${testo2}
+					</div>
+				</div>
+			<#elseif applicazione == "deli">			
+				<div class="contenitore">
+					<div class="all_left_testo">
+						${testo2}
+					</div>
+				</div>
+			</#if>
+			
+			
+			<!-- responsabile procedimento dete-deli-->
+			<#if applicazione == "dete">
+				<div class="contenitore">
+					<div class="all_left">
+						<p style="margin-bottom:5px;">Responsabile del procedimento ai sensi della L. 241/90: <br/> ${resproc}  </p> 
+					</div>				
+				</div>
+			<#elseif applicazione == "deli">
+				<div class="contenitore">
+					<div class="all_left">
+						<p style="margin-bottom:5px;">Responsabile del procedimento ai sensi della L. 241/90: <br/> ${resproc}  </p> 
+					</div>			
+				</div>
+			</#if>
+			
+			
+			<!-- FIRMATARI nel caso di Pico, Dete, Verba -->
+			<#if applicazione == "procton">
+				<div class="contenitore">
+					<div class = "all_right_firm" style="margin-bottom:5px; margin-top:15px;"> Firmato digitalmente da:	</div>
+					<div class = "all_right_firm" style="margin-bottom:-7px;  line-height:18px;"> ${firmatario}  </div>
+						<#if alias_pedice_firma??>
+							<div class = "all_right_firm" style="font-size: 10px;"> ${alias_pedice_firma} </div>
+						</#if>
+				</div>
+			<#elseif applicazione =="dete">
+				<div class="contenitore">
+					<div class = "all_right_firm" style="margin-bottom:5px; margin-top:15px;"> Firmato digitalmente da:	</div>
+					<div class = "all_right_firm" style="line-height:18px;"> ${firmatario}  </div>
+				</div>
+			<#elseif applicazione =="verba">
+				<div class="contenitore">
+					<div class = "all_right_firm" style="margin-bottom:5px; margin-top:15px;"> Firmato digitalmente da:	</div>
+					<div class = "all_right_firm" style="line-height:18px;"> ${firmatario}  </div>
+				</div>
+			</#if>
+			
+			<!-- responsabile procedimento pico-->
+			<#if applicazione == "procton">
+				<#if resproc!="\n">
+					<div class="contenitore">
+						<div class="all_left" style="margin-top:25px; font-size:10px; line-height:12px;">
+							Responsabile procedimento: <br/>
+							${resproc} 
+						</div>					
+					</div>
+				</#if>	
+			</#if>
+
+			
+		</div>
+				
+	</body>
+	
+</html>

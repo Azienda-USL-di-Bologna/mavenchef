@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Template registrazioni 908 (Bologna_aosp)
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	
+       <title>TODO supply a title</title>
+	   
+	   <style>
+			@font-face {
+				font-family: arial;
+				font-style: normal;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arial.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: bold;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbd.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/ariali.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: bold;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbi.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+	   	
+			body{font-family: arial; font-size: 13px;}
+			
+			@page { 
+				@top-center { content: element(header, first-except) };
+				size:A4;
+				margin-top:150px;
+				margin-bottom:150px;
+			}
+			@page:first{
+				@top-center{ content:element(header_first)}
+			}
+			
+
+			@media print{			
+					  
+				div.header_first{
+					position: running(header_first);
+				}	
+				
+				div.header {
+					position: running(header);
+				}
+				
+				div.content { 
+					poosition:running(content);
+					}  
+				
+				
+			}	
+			
+			
+			
+			
+/*
+	regole generali
+*/
+			tr{vertical-align:text-top;
+				page-break-inside:avoid;}
+			
+
+			table {border-collapse: separate;
+					-fs-table-paginate: paginate;}
+					
+			div{word-wrap: break-word}
+			
+			td{word-wrap: break-word}
+			
+
+/*
+	header e footer
+*/
+			div.header_first { 
+				height: 120px; 
+				//background:orange;
+				margin-top:30px;
+			}
+
+			div.header { 
+				height: 120px; 
+				//background:green;
+				margin-top:30px;
+			}
+			
+
+/*
+	contenitori
+*/	
+			div.content { 
+				margin-left: 20px;
+				margin-right: 20px;
+				background-color:yellow;
+			}		
+			
+			div.contenitore{
+				float:left;
+				width:640px;
+				line-height:20px;
+				//background-color:blue;
+				}
+				
+/*
+	altri
+*/
+			table.tabella{
+				width:640px;
+				table-layout:fixed;
+				}
+				
+				
+			div.oggetto{
+				width:90px;
+				padding-left:20px;
+				//background-color: red; 
+				float:left;
+				margin-bottom: 25px;
+				}				
+
+
+		</style>
+    
+	</head>
+    
+	<body>
+		
+		<div class="header_first">
+			<img src="file:///${resourcePath}/loghi/908_intestazione_estesa.png" style= "width:700px"/>		
+		</div>
+		
+		<div class="header"> 
+			<img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:75px"/>
+		</div>
+
+		
+        <div class="content">
+			<div class="contenitore"> 
+			
+				${content}
+			
+			</div> 
+		</div>
+		
+
+	
+	</body>
+	
+</html>

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: "mavenchef" 
+Specification-Version: "1.0"
+Implementation-Title: "mavenchef" 
+Implementation-Version: "build01"
+Permissions: all-permissions
+Application-Name: "mavenchef"
+X-COMMENT: Main-Class will be added automatically by build
+Main-Class: it.bologna.ausl.masterchef.Launcher.class

@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!--
+Template frontespizio 960 (IOR)
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	
+       <title>TODO supply a title</title>
+	    
+	   <style> 
+			@font-face {
+				font-family: arial;
+				font-style: normal;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arial.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: bold;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbd.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/ariali.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: bold;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbi.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@page { 
+				@bottom-center { content: element(footer) } ; 
+				@top-center { content: element(header, first-except) };
+				size:A4;
+				<#if logo??>
+					<#if logo == "960_sicilia">
+						margin-top:160px;
+					<#else>
+						margin-top:140px;
+					</#if>
+				<#else>
+					margin-top:140px;
+				</#if>
+				
+				margin-bottom:180px;
+			}
+			
+			@page:first{
+				@top-center{ content:element(header_first)}
+			}
+			
+
+			@media print{			
+					  
+				div.header_first{
+					position: running(header_first);
+				}	
+				
+				div.header {
+					position: running(header);
+				}
+				
+				div.content { 
+					poosition:running(content);
+					}  
+				
+				div.footer {
+					position: running(footer);
+				}	
+				
+			}	
+			
+			
+/*
+	Regole generali
+*/
+			body{
+				font-family: arial; 
+				font-size: 13px;
+				}
+				
+			table {border-collapse: separate;
+					-fs-table-paginate: paginate;}
+					
+			div{word-wrap: break-word}
+			
+			tr{vertical-align:text-top;
+				page-break-inside:avoid;}			
+			
+			td{word-wrap: break-word}	
+
+			ul{margin-top:0px;}			
+	
+	
+/*
+	Header e Footer
+*/
+			div.header_first { 
+				height: 100px; 
+				//background:orange;
+				margin-top:20px;
+			}
+
+			div.header { 
+				height: 100px; 
+				//background:green;
+				margin-top:20px;
+			}
+			
+					
+			div.footer { 
+				display: block;
+				height:100px;
+				position: running(footer); 
+				//background-color:yellow;
+			}	
+			
+			div.footer_b1{
+				vertical-align:text-top;
+				float:left;				
+				width: 25%;		
+				//background-color:red;
+			}
+			
+			div.footer_b2{
+				vertical-align:text-top;
+				float:left;
+				width: 74%;
+				text-align:justify;
+				margin-top:25px;
+				//background-color:green;
+				font-size:11px;
+			}
+				
+/*
+	Contenitori
+*/			
+			div.content { 
+				margin-left: 20px;
+				margin-right: 20px;
+				//background-color:yellow;
+			}		
+	
+			div.contenitore{
+				flat:left;
+				width:640px;
+				//background-color:blue;
+				}
+		
+/*
+	altri div
+*/
+			div.titolo{
+				width: 100%;
+				text-align:center;
+				float:left;
+				margin-top:0px;
+				margin-bottom: 30px;
+				font-size: 16px;
+				}
+			
+			div.left{
+				width:120px;
+				padding-left:45px;
+				//background-color: red; 
+				float:left;
+				margin-bottom: 15px;
+				}
+			
+			div.right{
+				width:475px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom: 15px;
+				}
+				
+			div.higher{
+				width: 595px; 
+				padding-left:45px;
+				//background-color: red; 
+				float:left;
+				margin-bottom:10px;
+				}
+			
+			div.lower{
+				width:575px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom:20px;
+				padding-left:65px;
+				}
+			
+			div.lower_justified{
+				width:575px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom:20px;
+				padding-left:65px;
+				text-align:justify;
+				}
+				
+			div.lower_justified p{
+				margin:0px;
+				}				
+				
+			div.lower_elenco{
+				width:615px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom:10px;
+				padding-left:25px;
+				}
+				
+			div.lower_tab{
+				float:left; 
+				margin-bottom:0px;}
+				
+			div.oggetto{
+				width:475px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom: 20px;
+				text-align:justify;
+				}
+		
+/*
+	tabelle
+*/
+			table.impronte{
+				table-layout:fixed;
+				//width: 640px;
+				width: 650px;
+				//border:1px solid black;
+				text-align:left;
+				display: true;}
+				
+			
+			td.td_first{
+				width:10px;
+			}
+			
+			td.td_second{
+				width:10px;
+			}
+			
+			td.td_third{
+				width:10px;
+			}
+			
+			
+			table.impronte td:first-child{
+				//border:1px solid black;
+				//width:170px;
+				padding-left:43px;}
+				
+			table.impronte tr{
+				vertical-align:text-top}
+    
+   
+			
+		</style>
+    
+	</head>
+    
+	<body>
+		
+		<div class="header_first">
+			<#if logo??>
+				<#if logo=="960_btm_rit">
+					<img src="file:///${resourcePath}/loghi/960_intestaz_btm_rit.png" style= "width:700px"/>
+				<#elseif logo=="960_sicilia">
+					<img src="file:///${resourcePath}/loghi/960_intestaz_sicilia.png" style= "width:550px"/>
+				<#else>
+					<img src="file:///${resourcePath}/loghi/960_intestazione_estesa.png" style= "width:700px"/>
+				</#if>
+			<#else>
+				<img src="file:///${resourcePath}/loghi/960_intestazione_estesa.png" style= "width:700px"/>
+			</#if>
+		</div>
+
+		<div class="header"> 
+			<img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:75px"/>
+		</div>
+		
+		<#if applicazione=="procton">
+			<#if movimentazione=="in">
+				<div class="footer">  
+					<div class = "footer_b1"><img src="file:///${qrCode}" style= "width:150px"/></div>
+					<div class= "footer_b2"> <p style="margin:0px">L'originale del presente documento e' conservato a cura
+						dell'ente produttore secondo normativa vigente. </p>
+						<p style="margin:0px">Ai sensi dell'art. 3bis c4-bis Dlgs 82/2005 e s.m.i., in assenza del domicilio digitale le amministrazioni possono
+						predisporre le comunicazioni ai cittadini come documenti informatici sottoscritti con firma digitale o firma
+						elettronica avanzata ed inviare ai cittadini stessi copia analogica di tali documenti sottoscritti con firma
+						autografa sostituita a mezzo stampa predisposta secondo le disposizioni di cui all'articolo 3 del Dlgs 39/1993.</p>
+					</div>
+				</div>
+			<#elseif movimentazione=="out">
+				<div class="footer">  
+					<div class = "footer_b1"><img src="file:///${qrCode}" style= "width:150px"/></div>
+					<div class= "footer_b2"> <p style="margin:0px">L'originale del presente documento, redatto in formato elettronico e firmato digitalmente e' conservato a cura
+						dell'ente produttore secondo normativa vigente. </p>
+						<p style="margin:0px">Ai sensi dell'art. 3bis c4-bis Dlgs 82/2005 e s.m.i., in assenza del domicilio digitale le amministrazioni possono
+						predisporre le comunicazioni ai cittadini come documenti informatici sottoscritti con firma digitale o firma
+						elettronica avanzata ed inviare ai cittadini stessi copia analogica di tali documenti sottoscritti con firma
+						autografa sostituita a mezzo stampa predisposta secondo le disposizioni di cui all'articolo 3 del Dlgs 39/1993.</p>
+					</div>
+				</div>
+			</#if>				
+		<#else>
+			<div class="footer">  
+				<div class = "footer_b1"><img src="file:///${qrCode}" style= "width:150px"/></div>
+				<div class= "footer_b2"> <p style="margin:0px">L'originale del presente documento, redatto in formato elettronico e firmato digitalmente e' conservato a cura
+					dell'ente produttore secondo normativa vigente. </p>
+					<p style="margin:0px">Ai sensi dell'art. 3bis c4-bis Dlgs 82/2005 e s.m.i., in assenza del domicilio digitale le amministrazioni possono
+					predisporre le comunicazioni ai cittadini come documenti informatici sottoscritti con firma digitale o firma
+					elettronica avanzata ed inviare ai cittadini stessi copia analogica di tali documenti sottoscritti con firma
+					autografa sostituita a mezzo stampa predisposta secondo le disposizioni di cui all'articolo 3 del Dlgs 39/1993.</p>
+				</div>
+			</div> 
+		</#if> 
+			
+        <div class="content">
+			<!--<div style="font-size: 28px"> normale <b> grassetto </b>  <i> corsivo </i>  <b>  <i>  grassetto  corsivo </i> </b>   </div> -->
+	
+			<div class="contenitore"> 
+				<div class="titolo">
+					FRONTESPIZIO ${tipo_frontespizio}
+				</div>	
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "left"> AOO: </div>
+				<div class= "right"> ${azienda} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "left"> REGISTRO: </div>
+				<div class= "right"> ${registro} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "left"> NUMERO: </div>
+				<div class= "right"> ${numero} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<!--contenitore3-->
+				<div class = "left"> DATA: </div>
+				<div class= "right"> ${data} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<!--contenitore3-->
+				<div class = "left"> OGGETTO: </div>
+				<div class= "oggetto"> ${oggetto} </div>
+			</div>
+			
+
+			<!--VISTATORI-->
+			<#if applicazione=="deli">
+				<#if vistatori??>
+					<div class="contenitore">
+						<!--contenitore4-->
+						<div class = "higher"> VISTO DI: </div>
+						<div class= "lower_justified"> ${vistatori} </div>
+					</div>
+				</#if>
+			<#elseif applicazione=="dete">
+				<#if vistatori??>
+					<div class="contenitore">
+						<!--contenitore4-->
+						<div class = "higher"> VISTO DI: </div>
+						<div class= "lower_justified"> ${vistatori} </div>
+					</div>
+				</#if>
+			</#if>
+			
+				
+			<#if applicazione=="procton">
+				<#if movimentazione=="out">
+					<div class="contenitore">
+						<!--contenitore4-->
+						<div class = "higher"> SOTTOSCRITTO DIGITALMENTE DA: </div>
+						<div class= "lower"> ${firmatario} </div>
+					</div>
+				</#if>
+			<#elseif applicazione =="dete" >
+				<div class="contenitore">
+					<!--contenitore4-->
+					<div class = "higher"> SOTTOSCRITTO DIGITALMENTE DA: </div>
+					<div class= "lower"> ${firmatario} </div>
+				</div>
+			<#elseif applicazione =="deli">
+				<div class="contenitore">
+					<!--contenitore4-->
+					<div class = "higher"> SOTTOSCRITTO DIGITALMENTE DA: </div>
+					<div class= "lower_justified"> ${firmatario} </div>
+				</div>
+			<#elseif applicazione =="verba">
+				<div class="contenitore">
+					<!--contenitore4-->
+					<div class = "higher"> SOTTOSCRITTO DIGITALMENTE DA: </div>
+					<div class= "lower"> ${firmatario} </div>
+				</div>	
+			</#if>			
+				
+			<#if applicazione=="dete">
+				<div class="contenitore">	
+					<!--contenitore5-->
+					<div class = "higher"> ADOTTATO DA: </div>
+					<div class= "lower"> ${unita_adottante} </div>
+				</div>
+			</#if>
+				
+			<#if fascicolo??>
+				<div class="contenitore">	
+					<div class = "higher"> DATI DI FASCICOLAZIONE: </div>
+					<div class= "lower_elenco">				
+						${fascicolo}
+					</div>
+				</div>
+			</#if>
+				
+			<#if classificazione??>
+				<div class="contenitore">	
+					<div class = "higher"> CLASSIFICAZIONI: </div>
+					<div class ="lower_elenco">
+						${classificazione}
+					</div>
+				</div>
+			</#if>
+				
+				
+			<!-- DESTINATARI in Dete, Deli e Verba-->
+			<#if applicazione == "dete">
+				<div class="contenitore">
+					<div class="higher">DESTINATARI: </div>	
+					<div class="lower_elenco">								
+						${destinatario}			
+					</div>				
+				</div>
+			<#elseif applicazione == "deli">
+				<div class="contenitore">
+					<div class="higher">DESTINATARI: </div>			
+					<div class="lower_elenco">		
+						${destinatario}
+					</div>
+				</div>
+			<#elseif applicazione == "verba">
+				<div class="contenitore">
+					<div class="higher">DESTINATARI: </div>			
+					<div class="lower_elenco">		
+						${destinatario}
+					</div>
+				</div>
+			</#if>
+			
+			
+			<#if impronta??>
+				<div class = "contenitore">
+					<div class = "higher" style="margin-bottom:5px"> DOCUMENTI: </div>
+					<div class ="lower_tab">
+						<table class= "impronte">
+							<thead>
+								<tr class= "impronte_tr">
+									<td class="td_first" style ="color:grey">
+										File 
+									</td>
+									<#if mostraFirmatariAllegati??>
+										<#if movimentazione != "in">
+											<#if mostraFirmatariAllegati != "0">
+												<td class="td_second" style ="color:grey">
+													Firmato digitalmente da
+												</td>                 
+											</#if>
+										</#if>
+									</#if>
+									<td class = "td_third" style ="color:grey">
+										Hash 
+									</td>
+								</tr>
+							</thead>
+							
+							<tbody style="font-size:10px">
+								${impronta}
+							</tbody>				
+						</table>
+					</div>
+				</div>
+			</#if>
+			
+		</div>
+				
+	</body>
+	
+</html>

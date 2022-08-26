@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Template gedi dorso (valido per tutti gli ambienti)
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	
+       <title>TODO supply a title</title>
+	   
+	   <style>
+			@font-face {
+				font-family: arial;
+				font-style: normal;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arial.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: bold;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbd.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/ariali.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: bold;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbi.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@page { 
+				size:A4;
+				margin-top:0px;
+				margin-bottom:0px;
+				margin-left:10px;
+				
+				margin-right:560px;
+				border-right: 1px dashed black;
+				border-left: 1px dashed black;
+			}			
+			
+
+/*
+	Regole generali
+*/
+			body{
+				font-family: arial; 
+				font-size: 13px;
+				}
+					
+			div{word-wrap: break-word}
+			
+			tr{vertical-align:text-top;
+				page-break-inside:avoid;}			
+
+/*
+	Header e Footer
+*/
+
+			div.header{ 
+				padding-left:45px;
+				//background:green;
+				padding-top:45px;
+				padding-bottom:50px;
+			}	
+				
+	
+/*
+	altri div
+*/
+			
+			div.left_high{
+				width: 200px;
+				float:left;
+				margin-left:5px;
+				}
+				
+			div.left_low{
+				padding-left: 15px;
+				width: 185px;
+				float:left;
+				margin-bottom: 30px;
+				}
+				
+			div.low{
+				width: 200px;
+				float:left;
+				margin-bottom: 30px;
+				margin-left:5px;
+				}
+				
+				
+		</style>
+    
+	</head>
+    
+	<body>
+		
+		<div class="header"> 
+			<img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:110px"/>
+		</div>
+	
+		<div class="left_high">
+			<b> FASCICOLO  ${codice}</b>  			
+		</div>	
+				
+		<#if titolo??>		
+			<div class="low"> <b> ${titolo} </b> </div>
+		</#if>
+		
+		<#if descrizione??>
+			<div class = "left_high"> Descrizione:  </div>
+			<div class = "left_low">${descrizione} </div>
+		</#if>
+		
+		<#if classificazione??>		
+			<div class = "left_high"> Classificazione </div>
+			<div class = "left_low"> ${classificazione} </div>
+		</#if>
+
+		<div class = "left_high"> Responsabile del fascicolo:</div>
+		<div class = "left_low"> ${responsabile} - ${unita_responsabile}</div>
+		
+		
+		<div class = "left_high"> Costa stampata il:</div>
+		<div class = "left_low"> ${data_stampa} </div>
+	
+				
+	</body>
+	
+</html>
