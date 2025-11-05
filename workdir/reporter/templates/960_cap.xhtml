@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	
+       <title>TODO supply a title</title>
+	   
+	   <style>
+			@font-face {
+				font-family: arial;
+				font-style: normal;
+				font-weight: normal;
+				//src:url(fonts//Arial//arial.ttf);
+				src:url("file:///${resourcePath}/fonts/Arial/arial.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: bold;
+				font-weight: normal;
+				//src:url(fonts//Arial//arialbd.ttf);
+				src:url("file:///${resourcePath}/fonts/Arial/arialbd.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: normal;
+				//src:url(fonts//Arial//ariali.ttf);
+				src:url("file:///${resourcePath}/fonts/Arial/ariali.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: bold;
+				//src:url(fonts//Arial//arialbi.ttf);
+				src:url("file:///${resourcePath}/fonts/Arial/arialbi.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+	   	
+			body{font-family: arial; font-size: 13px;}
+			
+			@page { 
+				@bottom-center { content: element(footer) } ; 
+				@top-center { content: element(header, first-except) };
+				size:A4;
+				margin-top:140px;
+				margin-bottom:180px;
+			}
+			@page:first{
+				@top-center{ content:element(header_first)}
+			}
+			
+
+			@media print{			
+					  
+				div.header_first{
+					position: running(header_first);
+				}	
+				
+				div.header {
+					position: running(header);
+				}
+				
+				div.content { 
+					poosition:running(content);
+					}  
+				
+				div.footer {
+					position: running(footer);
+				}	
+				
+			}	
+
+/*
+	Regole generali
+*/
+			table {border-collapse: separate;
+					-fs-table-paginate: paginate;}
+					
+			div{word-wrap: break-word}
+			
+			tr{vertical-align:text-top;
+				page-break-inside:avoid;}			
+			
+			td{word-wrap: break-word}	
+
+			ul{margin-top:0px;}			
+	
+	
+/*
+	Header e Footer
+*/
+			div.header_first { 
+				height: 100px; 
+				//background:orange;
+				margin-top:20px;
+			}
+
+			div.header { 
+				height: 100px; 
+				//background:green;
+				margin-top:20px;
+			}
+			
+					
+			div.footer { 
+				display: block;
+				height:0px;
+				position: running(footer); 
+				//background-color:yellow;
+			}	
+			
+			div.footer_b1{
+				vertical-align:text-top;
+				float:left;				
+				width: 25%;		
+				//background-color:red;
+			}
+			
+			div.footer_b2{
+				vertical-align:text-top;
+				float:left;
+				width: 74%;
+				text-align:justify;
+				margin-top:25px;
+				//background-color:green;
+				font-size:11px;
+			}
+				
+/*
+	Contenitori
+*/			
+			div.content { 
+				margin-left: 20px;
+				margin-right: 20px;
+				//background-color:yellow;
+			}		
+	
+			div.contenitore{
+				flat:left;
+				width:640px;
+				//background-color:blue;
+			}
+		
+/*
+	altri div
+*/
+			div.centrato{
+				width: 100%;
+				text-align:center;
+				float:left;
+				margin-bottom: 25px;
+				}
+			
+			div.spostato_a_sinistra{
+				width: 100%;
+				text-align:left;
+				float:left;
+				margin-bottom: 25px;
+				}
+			
+			div.titolo{
+				width: 100%;
+				text-align:center;
+				float:left;
+				margin-top:0px;
+				margin-bottom: 30px;
+				font-size: 16px;
+			}
+			
+			div.left{
+				width:120px;
+				padding-left:45px;
+				//background-color: red; 
+				float:left;
+				margin-bottom: 15px;
+			}
+			
+			div.right{
+				width:475px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom: 15px;
+			}
+				
+			div.higher{
+				width: 595px; 
+				padding-left:45px;
+				//background-color: red; 
+				float:left;
+				margin-bottom:10px;
+			}
+			
+			div.higher_dest{
+				width: 595px; 
+				padding-left:45px;
+				padding-top:50px;
+				float:left;
+				margin-bottom:10px;
+			}
+			
+			div.lower{
+				width:575px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom:20px;
+				padding-left:65px;
+			}
+				
+			div.lower_elenco{
+				width:615px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom:10px;
+				padding-left:25px;
+			}
+				
+			div.lower_tab{
+				float:left; 
+				margin-bottom:0px;
+			}
+				
+			div.oggetto{
+				width:475px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom: 20px;
+			}
+	
+	
+/*
+	tabelle
+*/
+			table.impronte{
+				table-layout:fixed;
+				width: 640px;
+				//border:1px solid black;
+				text-align:left;
+				display: true;
+			}
+			
+			table.impronte td:first-child{
+				//border:1px solid black;
+				width:250px;
+				padding-left:20px;
+			}
+			
+			table.impronte td:last-child{
+				//border:1px solid black;
+				width:250px;
+				padding-left:20px;
+			}
+			
+			table.impronte td{
+				padding-left:20px;
+			}
+				
+			table.impronte tr{
+				vertical-align:text-top
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="header_first">
+			<img src="file:///${resourcePath}/loghi/960_intestazione_estesa.png" style= "width:700px"/>
+		</div>
+		
+		<div class="content">
+			<!--<div style="font-size: 28px"> normale <b> grassetto </b>  <i> corsivo </i>  <b>  <i>  grassetto  corsivo </i> </b>   </div> -->
+	
+			<div class="contenitore"> 
+				<div class="titolo">
+					COMUNICAZIONE DI AVVIO DEL PROCEDIMENTO (art. 8 L. 241/90)
+				</div>	
+			</div>
+			
+			<div class="contenitore">
+				<div class="spostato_a_sinistra">
+					<p>In seguito all’istanza registrata con numero ${codiceRegistroDocumento} ${numeroDocumento}/${annoDocumento}
+					è stato creato il procedimento n. ${numeroIter}/${annoIter} di tipo <b>${tipoProcedimento}</b> in data ${dataCreazioneIter}.</p>
+					<p>I dati dell'iter sono:</p>
+				</div>
+			</div>
+			
+			
+			<div class="contenitore">	
+				<div class = "higher"> AMMINISTRAZIONE COMPETENTE: </div>
+				<div class= "lower"> ${azienda} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "higher"> OGGETTO: </div>
+				<div class= "lower"> ${oggettoIter} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "higher"> DATA DI ARRIVO: </div>
+				<div class= "lower"> ${dataRegistrazione} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "higher"> DATA DI AVVIO: </div>
+				<div class= "lower"> ${dataAvvioIter} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "higher"> DATA DI CONCLUSIONE PREVISTA: </div>
+				<div class= "lower"> ${dataConclusionePrevista} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "higher"> STRUTTURA RESPONSABILE DEL PROCEDIMENTO: </div>
+				<div class= "lower"> ${StrutturaResponsabileDelProcedimento} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "higher"> RESPONSABILE DEL PROCEDIMENTO: </div>
+				<div class= "lower"> ${responsabileDelProcedimento} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "higher"> RESPONSABILE DELL'ADOZIONE DELL'ATTO FINALE: </div>
+				<div class= "lower"> ${responsabileAdozioneAttoFinale} </div>
+			</div>
+			
+			<div class="contenitore">	
+				<div class = "higher"> TITOLARE DEL POTERE SOSTITUTIVO: </div>
+				<div class= "lower"> ${titolarePotereEsecutivo} </div>
+			</div>
+
+            <div class="footer">
+                <div class="spostato_a_sinistra">
+                    <p>In caso di mancata conclusione del procedimento entro il termine indicato, il richiedente potrà:
+                    azionare il potere sostitutivo previsto dall’art. 2, comma 9-bis, della L. n. 241/90 e s.m.i.;
+                    azionare la tutela disciplinata dal codice del processo amministrativo, di cui al decreto legislativo 2 luglio 2010, n.104.</p>
+                </div>
+            </div>
+		</div>
+				
+	</body>
+	
+</html>

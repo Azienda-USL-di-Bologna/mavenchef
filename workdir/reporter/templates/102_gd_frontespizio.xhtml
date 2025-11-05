@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Template frontespizio gedi 102 (Parma Ausl)
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	
+       <title>TODO supply a title</title>
+	   
+	   <style>
+			@font-face {
+				font-family: arial;
+				font-style: normal;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arial.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: bold;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbd.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/ariali.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: bold;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbi.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@page { 
+				@top-center { content: element(header, first-except) };
+				size:A4;
+				margin-top:140px;
+				margin-bottom:180px;
+			}
+			@page:first{
+				@top-center{ content:element(header_first)}
+			}
+			
+
+			@media print{			
+					  
+				div.header_first{
+					position: running(header_first);
+				}	
+				
+				div.header {
+					position: running(header);
+				}
+				
+				div.content { 
+					poosition:running(content);
+					}  
+			}	
+
+/*
+	Regole generali
+*/
+			body{
+				font-family: arial; 
+				font-size: 15px;
+				}
+					
+			div{word-wrap: break-word}
+			
+			tr{vertical-align:text-top;
+				page-break-inside:avoid;}			
+	
+	
+	
+/*
+	Header e Footer
+*/
+			div.header_first { 
+				height: 100px; 
+				//background:orange;
+				margin-top:20px;
+			}
+
+			div.header { 
+				height: 100px; 
+				//background:green;
+				margin-top:20px;
+			}
+			
+				
+/*
+	Contenitori
+*/			
+			div.content {
+				//background-color:yellow;
+				width:680px;
+			}		
+					
+			
+/*
+	altri div
+*/
+			div.titolo{
+				width: 100%;
+				text-align:center;
+				float:left;
+				margin-top:10px;
+				margin-bottom: 55px;
+				//font-size: 16px;
+				}
+			
+			div.left{
+				width: 100%;
+				float:left;
+				text-align:left;
+				margin-top:30px;
+				}
+				
+			div.descrizione_left{
+				width: 102px;
+				float:left;
+				text-align:left;
+				margin-top:0px;
+				}
+			div.descrizione_right{
+				width: 578px;
+				float:left;
+				text-align:left;
+				margin-top:0px;
+				}
+			
+			div.responsabile_left{
+				width: 199px;
+				float:left;
+				text-align:left;
+				margin-top:30px;
+				}
+			div.responsabile_right{
+				width: 481px;
+				float:left;
+				text-align:left;
+				margin-top:30px;
+				}
+			
+
+		</style>
+    
+	</head>
+    
+	<body>
+		
+		<div class="header_first">
+			<img src="file:///${resourcePath}/loghi/102_intestazione.png" style="width:700px"/>		
+		</div>
+
+		<div class="header"> 
+			<img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:75px"/>
+		</div>
+		
+
+                <div class="content">
+			<!--<div style="font-size: 28px"> normale <b> grassetto </b>  <i> corsivo </i>  <b>  <i>  grassetto  corsivo </i> </b>   </div> -->
+	
+				<div class="titolo">
+					<b> ${categoria} ${codice}</b>
+				</div>	
+		
+
+				<#if titolo??>
+					<div class = "left" style="margin-top:0px; margin-bottom:20px;"> <b>${titolo}</b> </div>
+				</#if>
+		
+
+				<#if descrizione??>
+					<div class = "descrizione_left"> Descrizione:  </div>
+					<div class = "descrizione_right">${descrizione} </div>
+				</#if>
+				
+				<#if classificazione??>
+					<div class =  "left" style="margin-top:5px"> Classificazione: &nbsp; ${classificazione}</div>
+				</#if>
+
+
+				<div class =  "responsabile_left"> Responsabile del fascicolo: </div>
+				<div class =  "responsabile_right">  ${responsabile} - ${unita_responsabile} </div>
+
+				<div class =  "left"> Copertina stampata il: &nbsp; ${data_stampa}</div>
+			
+			
+		</div>
+				
+	</body>
+	
+</html>

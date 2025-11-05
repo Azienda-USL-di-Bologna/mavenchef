@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Template trasparenza 908 (Bolonga_aosp)
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	
+       <title>TODO supply a title</title>
+	   
+	   <style>
+			@font-face {
+				font-family: arial;
+				font-style: normal;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arial.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: bold;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbd.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/ariali.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: bold;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbi.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+	   	
+			body{font-family: arial; font-size: 13px;}
+			
+			@page { 
+				@bottom-center { content: element(footer) } ; 
+				@top-center { content: element(header, first-except) };
+				size:A4;
+				margin-top:140px;
+				margin-bottom:180px;
+			}
+			@page:first{
+				@top-center{ content:element(header_first)}
+			}
+			
+
+			@media print{			
+					  
+				div.header_first{
+					position: running(header_first);
+				}	
+				
+				div.header {
+					position: running(header);
+				}
+				
+				div.content { 
+					poosition:running(content);
+					}  
+				
+				div.footer {
+					position: running(footer);
+				}	
+				
+			}	
+			
+			
+/*
+	Regole generali
+*/
+			table {border-collapse: separate;
+					-fs-table-paginate: paginate;}
+					
+			div{word-wrap: break-word}
+			
+			tr{vertical-align:text-top;
+				page-break-inside:avoid;}			
+			
+			td{word-wrap: break-word}	
+
+			ul{margin-top:0px;}			
+	
+	
+/*
+	Header e Footer
+*/
+			div.header_first { 
+				height: 100px; 
+				//background:orange;
+				margin-top:20px;
+			}
+
+			div.header { 
+				height: 100px; 
+				//background:green;
+				margin-top:20px;
+			}
+			
+					
+			div.footer { 
+				display: block;
+				height:100px;
+				position: running(footer); 
+				//background-color:yellow;
+			}	
+			
+			div.footer_b1{
+				vertical-align:text-top;
+				float:left;				
+				width: 25%;		
+				//background-color:red;
+			}
+			
+			div.footer_b2{
+				vertical-align:text-top;
+				float:left;
+				width: 74%;
+				text-align:justify;
+				margin-top:25px;
+				//background-color:green;
+				font-size:11px;
+			}
+				
+/*
+	Contenitori
+*/			
+			div.content { 
+				margin-left: 20px;
+				margin-right: 20px;
+				//background-color:yellow;
+			}		
+	
+			div.contenitore{
+				flat:left;
+				width:640px;
+				//background-color:blue;
+				}
+
+				
+/*
+	altri div
+*/
+			div.titolo{
+				width: 100%;
+				text-align:center;
+				float:left;
+				margin-bottom: 30px;
+				font-size: 16px;
+				}
+			
+			div.left{
+				width:120px;
+				padding-left:45px;
+				//background-color: red; 
+				float:left;
+				margin-bottom: 15px;
+				}
+			
+			div.right{
+				width:475px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom: 15px;
+				}
+				
+			div.higher{
+				width: 595px; 
+				padding-left:45px;
+				//background-color: red; 
+				float:left;
+				margin-bottom:10px;
+				}
+			
+			div.lower{
+				width:575px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom:20px;
+				padding-left:65px;
+				}
+				
+			div.lower_elenco{
+				width:615px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom:10px;
+				padding-left:25px;
+				}
+				
+			div.lower_tab{
+				float:left; 
+				margin-bottom:0px;}
+				
+			div.oggetto{
+				width:475px; 
+				//background-color: green; 
+				float:left;
+				margin-bottom: 20px;}
+	
+	
+/*
+	tabelle
+*/
+			table.impronte{
+				table-layout:fixed;
+				width: 640px;
+				//border:1px solid black;
+				text-align:left;
+				display: true;}
+			
+			table.impronte td:first-child{
+				//border:1px solid black;
+				width:173px;
+				padding-left:60px;}
+				
+			table.impronte tr{
+				vertical-align:text-top}
+   
+   
+			
+		</style>
+    
+	</head>
+    
+	<body>
+		
+		<div class="header_first">	
+			<img src="file:///${resourcePath}/loghi/908_intestazione_estesa.png" style= "width:700px"/>				
+		</div>
+
+		<div class="header"> 	
+			<img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:75px"/>
+		</div>
+	
+			
+        <div class="content">
+
+			<!--<div style="font-size: 28px"> normale <b> grassetto </b>  <i> corsivo </i>  <b>  <i>  grassetto  corsivo </i> </b>   </div> -->
+	
+			<div class="contenitore"> 
+				<div class="titolo">
+					${tipo_frontespizio}
+				</div>	
+			</div>
+			
+			<#if registro??>
+			<div class="contenitore">	
+				<div class = "left"> REGISTRO: </div>
+				<div class= "right"> ${registro} </div>
+			</div>
+			</#if>
+			
+			<#if numero??>
+			<div class="contenitore">	
+				<div class = "left"> NUMERO: </div>
+				<div class= "right"> ${numero} </div>
+			</div>
+			</#if>
+			
+			<#if data??>
+			<div class="contenitore">	
+				<div class = "left"> DATA: </div>
+				<div class= "right"> ${data} </div>
+			</div>
+			</#if>
+			
+			<#if provvedimento??>
+			<div class="contenitore">
+				<div class = "higher"> PROVVEDIMENTO RELATIVO A: </div>
+				<div class= "lower"> ${provvedimento} </div>
+			</div>
+			</#if>
+			
+			<#if contenuto??>
+			<div class="contenitore">
+				<div class = "higher"> CONTENUTO: </div>
+				<div class= "lower"> ${contenuto} </div>
+			</div>
+			</#if>
+			
+			<#if oggetto??>
+			<div class="contenitore">
+				<div class = "higher"> OGGETTO: </div>
+				<div class= "lower"> ${oggetto} </div>
+			</div>
+			</#if>
+			
+			<#if spesa_prevista??>
+			<div class="contenitore">
+				<div class = "higher"> EVENTUALE SPESA PREVISTA: </div>
+				<div class= "lower"> ${spesa_prevista} </div>
+			</div>
+			</#if>
+			
+			<#if estremi_documenti??>
+			<div class="contenitore">
+				<div class = "higher"> ESTREMI RELATIVI AI DOCUMENTI CONTENUTI NEL FASCICOLO: </div>
+				<div class= "lower"> ${estremi_documenti} </div>
+			</div>
+			</#if>
+			
+		</div>
+				
+	</body>
+	
+</html>

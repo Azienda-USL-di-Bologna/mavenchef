@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>      
+<!--
+Template corpo 960 (IOR)
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	
+       <title>TODO supply a title</title>
+	   
+	   <style>
+			@font-face {
+				font-family: arial;
+				font-style: normal;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arial.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: bold;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbd.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/ariali.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: bold;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbi.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@page { 
+				@bottom-center { content: element(contenitore_footer) } ; 
+				@top-center { content: element(header, first-except) };
+				size:A4;
+
+                margin-top:120px;
+                margin-bottom:150px;
+                <#if logo??>
+					<#if logo == "960_sicilia">
+						margin-top:140px;
+					<#elseif logo=="960_sumap">
+						margin-top: 160px;
+                    <#elseif logo=="960_sumcf">
+                         margin-top: 140px;
+					<#elseif logo=="medicina_lavoro">
+                         margin-top: 140px;
+					<#else>
+						margin-top:120px;
+					</#if>
+				<#else>
+					margin-top:120x;
+				</#if>
+				
+			}
+			
+			@page:first{
+				@top-center{ content:element(header_first)}
+			}
+			
+
+			@media print{			
+					  
+				div.header_first{
+					position: running(header_first);
+				}	
+				
+				div.header {
+					position: running(header);
+				}
+				
+				div.content { 
+					poosition:running(content);
+					}  
+				
+				div.contenitore_footer {
+					position: running(contenitore_footer);
+				}
+				
+			}	
+
+/*
+	regole generali
+*/
+			body{
+				font-family: arial; 
+				font-size: 13px;
+				}
+
+			tr{vertical-align:text-top;
+				page-break-inside:avoid;}
+			
+
+			table {border-collapse: separate;
+					-fs-table-paginate: paginate;}
+					
+			div{word-wrap: break-word}
+			
+			td{word-wrap: break-word}
+			
+/*
+	header e footer
+*/
+
+
+
+			div.header_first { 
+				height: 55px; 
+			}
+			
+			div.header{ 
+				height: 70px; 
+				margin-top:0px;
+			}
+			
+			div.contenitore_footer{ 
+				min-height:90px;
+				//display:block;
+				color:#018749;
+				position:running(contenitore_footer);
+				font-size: 10px;
+			}
+
+			div.footer_top_img { 
+				height:85px;
+				display:block;
+				color:#018749;
+				font-size: 10px;
+				padding-left:60px;
+			}
+			div.footer_top_text { 
+				vertical-align:text-top;
+				height:20px;
+				display:block;
+				color:#808080;
+				font-size: 10px;
+				padding-left:62px;
+				font-size:8px;
+			}
+			
+			
+			div.footer_bottom { 
+				height:90px;
+				display:block;
+				color:#018749;
+				font-size: 10px;
+			}
+			
+
+			div.footer_bottom_left{	
+				vertical-align:text-top;
+				float:left;				
+				width: 250px;
+				padding-left:60px;
+			}
+			
+				
+			div.footer_bottom_right{
+				vertical-align:text-top;
+				float:left;
+				width: 290px;
+				padding-left:50px;			
+			}	
+					
+				
+/*
+	contenitori
+*/	
+			div.content { 
+				margin-left: 20px;
+				margin-right: 20px;
+			}		
+			
+			div.contenitore{
+				float:left;
+				width:640px;
+				line-height:20px;
+			}
+			
+/*
+	altri div
+*/
+			div.centrato{
+				width: 100%;
+				text-align:center;
+				float:left;
+				margin-bottom: 25px;
+				}
+			
+			div.ogg_left{
+				width:90px;
+				padding-left:20px;
+				float:left;
+				margin-bottom: 25px;}
+			
+			div.ogg_right{
+				text-align: justify;
+				width:530px; 
+				float:left;
+				margin-bottom: 25px;
+				}			
+				
+			div.all_left{
+				width:620px;
+				padding-left:20px;
+				float:left;
+				margin-bottom:25px;
+				}
+			
+			div.all_left_testo{
+				width:620px;
+				padding-left:20px;
+				float:left;
+				margin-bottom:25px;
+				text-align:justify;
+				}
+				
+			div.all_left_testo br{
+				display:block;
+				}	
+				
+			div.all_left_testo p{
+				margin:0px;
+				}				
+			
+			div.all_right{
+				float:left;
+				width: 300px;
+				padding-left: 340px;
+				margin-bottom: 25px;
+				}
+				
+				
+			div.all_right_firm{
+				float:left;
+				width: 220px;
+				padding-left: 420px;
+				margin-bottom: 25px;
+				}
+	
+	
+			 
+/*
+	elenchi puntati dei destinatari
+*/
+			ul.dest_pico{list-style-type:none;}
+			
+			li.li_pico{
+				margin-bottom:10px;
+				list-style: none;}
+				
+			li.li_de{
+				margin-left:0px;
+				}
+
+			 
+			
+		</style>
+    
+	</head>
+	
+	<body>
+		
+		<div class="header_first">
+			<#if logo??>
+				<#if logo=="960_btm_rit">
+					<img src="file:///${resourcePath}/loghi/960_intestaz_btm_rit.png" style= "width:700px"/>
+				<#elseif logo=="960_sicilia">
+					<img src="file:///${resourcePath}/loghi/960_intestaz_sicilia.png" style= "width:550px"/>
+				<#elseif logo=="960_sumap">
+					<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna – ISNB (IRCCS)</div>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna</div>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Imola</div>
+                    <div style="margin-bottom:30px;"> </div>
+				<#elseif logo=="960_sumcf">
+                    <img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna</div>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <div style="margin-bottom:20px;"> </div>
+				<#elseif logo=="medicina_lavoro">
+                    <img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna</div>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <div style="margin-bottom:20px;"> </div>
+				<#elseif logo=="960_sume">
+                    <img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <div style="margin-bottom:10px;"> </div>
+				<#else>
+					<img src="file:///${resourcePath}/loghi/960_intestazione_estesa.png" style= "width:700px"/>
+				</#if>
+			<#else>
+				<img src="file:///${resourcePath}/loghi/960_intestazione_estesa.png" style= "width:700px"/>
+			</#if>		
+		</div>
+
+		<div class="header"> 
+			<#if logo??>
+				<#if logo=="960_sumap">
+					<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px;"/>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna – ISNB (IRCCS)</div>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna</div>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Imola</div>
+                    <div style="margin-bottom:20px;"> </div>
+				<#elseif logo=="960_sumcf">
+                    <img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna</div>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <div style="margin-bottom:30px;"> </div>
+				<#elseif logo=="medicina_lavoro">
+                    <img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna</div>
+					<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <div style="margin-bottom:30px;"> </div>
+				<#elseif logo=="960_sume">
+                    <img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                    <div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+                    <div style="margin-bottom:30px;"> </div>
+				<#else>
+					<img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:75px"/>
+				</#if>
+			<#else>
+				<img src="file:///${resourcePath}/loghi/intestazione_pag_succ.png" style= "width:75px"/>
+			</#if>
+		</div>
+		 
+		<!-- footer (riempito solo nel caso di pico)-->
+		<div class="contenitore_footer">
+			<#if applicazione=="procton">
+				<div class="footer_bottom"> 
+					<#if logo??>
+						<#if logo =="960_btm">
+							<div class="footer_bottom_left" style = "color: #000000;" >
+								<img src="file:///${resourcePath}/loghi/960_pedice_btm.png" style= "width:110px; position:absolute; left:5px; top:20px;"/>
+								<div style = "display:block; position:absolute; left:125px; line-height: 13px; top:10px">
+									<p style = "margin-bottom: 0px; font-weight:bold; font-size: 11px;">
+										SISTEMA DI GESTIONE QUALITA'<br/>
+										CERTIFICATO DA CERTIQUALITY
+									</p>
+									<p style = "color: #006699; margin-top: 0px; font-weight:bold; font-size: 11px;">
+										UNI EN ISO 9001:2008
+									</p>
+									<p style = "margin-bottom: 0px; ">
+										Banca delle Cellule e del Tessuto Muscoloscheletrico<br/>
+										Via Pupilli, 1/10 - 40136 Bologna<br/>
+										Telefono 051 6366488   Fax 051 6366137<br/>
+									</p>
+									<p style =  "color:#0000FF;  margin-top: 0px;">
+										btm@ior.it    www.btm.ior.it
+									</p>
+								</div>	
+							</div>
+							<div class="footer_bottom_right" style= "position:absolute; right:0px;">
+								<b>Istituto Ortopedico Rizzoli</b><br/><b>Sede legale</b> Via Di Barbiano, 1/10 - 40136 Bologna<br/><b>Ospedale</b> Via G. C. Pupilli, 1 - 40136 Bologna<br/><b>Centro di Ricerca</b> Via Di Barbiano, 1/10 - 40136 Bologna<br/>Tel. 051/6366111 - Fax 051/580453 www.ior.it <br/>Codice Fiscale e Partita IVA 00302030374 
+							</div>
+						<#elseif logo == "960_btm_rit">
+							<div class="footer_bottom_left" style = "color: #000000;" >
+								<img src="file:///${resourcePath}/loghi/960_pedice_btm.png" style= "width:110px; position:absolute; left:5px; top:20px;"/>
+								<div style = "display:block; position:absolute; left:125px; line-height: 13px; top:10px">
+									<p style = "margin-bottom: 0px; font-weight:bold; font-size: 11px;">
+										SISTEMA DI GESTIONE QUALITA'<br/>
+										CERTIFICATO DA CERTIQUALITY
+									</p>
+									<p style = "color: #006699; margin-top: 0px; font-weight:bold; font-size: 11px;">
+										UNI EN ISO 9001:2008
+									</p>
+									<p style = "margin-bottom: 0px; ">
+										Banca delle Cellule e del Tessuto Muscoloscheletrico<br/>
+										Via Pupilli, 1/10 - 40136 Bologna<br/>
+										Telefono 051 6366488   Fax 051 6366137<br/>
+									</p>
+									<p style =  "color:#0000FF;  margin-top: 0px;">
+										btm@ior.it    www.btm.ior.it
+									</p>
+								</div>	
+							</div>
+							<div class="footer_bottom_right" style= "position:absolute; right:0px;">
+								<b>Istituto Ortopedico Rizzoli</b><br/><b>Sede legale</b> Via Di Barbiano, 1/10 - 40136 Bologna<br/><b>Ospedale</b> Via G. C. Pupilli, 1 - 40136 Bologna<br/><b>Centro di Ricerca</b> Via Di Barbiano, 1/10 - 40136 Bologna<br/>Tel. 051/6366111 - Fax 051/580453 www.ior.it <br/>Codice Fiscale e Partita IVA 00302030374 
+							</div>
+						<#elseif logo == "960_sicilia">
+							<div class="footer_bottom_left" style= "padding-left: 50px; width:290px;">
+								<b>Istituto Ortopedico Rizzoli</b><br/><b>Sede legale</b> Via Di Barbiano, 1/10 - 40136 Bologna<br/><b>Ospedale</b> Via G. C. Pupilli, 1 - 40136 Bologna<br/><b>Centro di Ricerca</b> Via Di Barbiano, 1/10 - 40136 Bologna<br/>Tel. 051/6366111 - Fax 051/580453 www.ior.it <br/>Codice Fiscale e Partita IVA 00302030374 
+							</div>
+							<div class="footer_bottom_right" style= "padding-left:20px; width:320px;">
+								<b>Dipartimento Rizzoli Sicilia</b><br/>SS 113 al km 246 - 90011 Bagheria (PA)<br/>Segreteria Direzione Sanitaria 091/9297031 Fax 091/9297032<br/>Segreteria Reparto / gestione ricoveri 091/9297092 Fax 091/9297097<br/>Ufficio prenotazioni 091/901294 - 091/903799<br/>Reparto Ortopedia Generale 091/9297080 Fax 091/9297063<br/>Reparto Medicina Fisica e Riabilitativa 091/9297083 Fax 091/9297088
+							</div>
+						
+						<#else>
+							<div class="footer_bottom_left">
+								${pedice_footer_ausl}
+							</div>
+							<div class="footer_bottom_right">
+								<b>Istituto Ortopedico Rizzoli</b><br/><b>Sede legale</b> Via Di Barbiano, 1/10 - 40136 Bologna<br/><b>Ospedale</b> Via G. C. Pupilli, 1 - 40136 Bologna<br/><b>Centro di Ricerca</b> Via Di Barbiano, 1/10 - 40136 Bologna<br/>Tel. 051/6366111 - Fax 051/580453 www.ior.it <br/>Codice Fiscale e Partita IVA 00302030374 
+							</div>
+						</#if>
+					<#else>
+						<div class="footer_bottom_left">
+							${pedice_footer_ausl}
+						</div>
+						<div class="footer_bottom_right">
+							<#if logo == "960_sumap">
+								<b>Istituto Ortopedico Rizzoli </b><br/>Sede legale: via Di Barbiano, 1/10 - 40136 Bologna <br/>Ospedale: via G.C. Pupilli, 1 – 40136 Bologna <br/>Centro di Ricerca: via Di Barbiano, 1/10 - 40136 Bologna <br/>Tel. +39.051.636.6111 fax +39.051.580.453 <br/>Sito. www.ior.it <br/>Codice fiscale e Partita Iva 00302030374
+							<#else>
+								<b>Istituto Ortopedico Rizzoli</b><br/><b>Sede legale</b> Via Di Barbiano, 1/10 - 40136 Bologna<br/><b>Ospedale</b> Via G. C. Pupilli, 1 - 40136 Bologna<br/><b>Centro di Ricerca</b> Via Di Barbiano, 1/10 - 40136 Bologna<br/>Tel. 051/6366111 - Fax 051/580453 www.ior.it <br/>Codice Fiscale e Partita IVA 00302030374 
+							</#if>
+						</div>
+					</#if>
+				</div>			
+			</#if>
+		</div>
+		
+		 
+		
+        <div class="content">
+
+			<!-- UNITA' FIRMATARIO, visibile per Dete e Deli e Pico  -->
+			<#if applicazione=="dete">
+				<div class="contenitore"> 
+					<div class="centrato" style="margin-bottom:35px; margin-top:30px">
+						${unita_firmatario}
+					</div>	
+				</div>
+			 <#elseif applicazione=="deli">
+				<div class="contenitore"> 
+					<div class="centrato" style="margin-bottom:35px; margin-top:30px">
+						${unita_firmatario}
+					</div>	
+				</div>
+			<#elseif applicazione=="procton">
+				<div class="contenitore">
+                    <#if logo=="960_sumap" || logo=="960_sumcf" || logo=="960_sume" || logo=="medicina_lavoro">
+                         <div class="all_left" style="margin-bottom:35px; margin-top:-5px; padding-left:42px; width:590px; color:#018749; font-size: 10px;line-height:12px; font-weight:bold; ">
+                            ${unita_firmatario}
+                        </div>
+                    <#else>
+    					<div class="all_left" style="margin-bottom:35px; margin-top:-5px; padding-left:50px; width:590px; color:#018749; font-size: 10px;line-height:12px;">
+	    					${unita_firmatario}						
+		    			</div>	
+                    </#if>
+				</div>
+			</#if>
+
+			
+			<!-- titolo visibile solo nel caso di Dete Deli. (DETERMINAZIONE, DELIBERAZIONE) -->
+			<#if applicazione =="dete">
+				<div class="contenitore"> 
+					<div class="centrato">
+						${titolo_corpo}
+					</div>	
+				</div>
+			<#elseif applicazione =="deli">
+				<div class="contenitore"> 
+					<div class="centrato">
+						${titolo_corpo}
+					</div>	
+				</div>
+			</#if>
+			
+			
+			
+			<!-- DESTINATARI visibili solo in Pico -->
+			<#if applicazione=="procton">
+				<div class="contenitore">	
+					<div class = "all_right" style="line-height:15px"> 
+						<ul class= "ui_pico">
+							${destinatario}
+						</ul>
+					</div>
+				</div>
+			</#if>
+			 
+			
+
+			<!-- OGGETTO in Pico, Dete e Deli -->
+			<#if applicazione=="procton">
+				<div class="contenitore">	
+					<div class = "ogg_left"> OGGETTO: </div>
+					<div class= "ogg_right"> ${oggetto} </div>
+				</div>
+			<#elseif applicazione=="dete">
+				<div class="contenitore">	
+					<div class = "ogg_left"> OGGETTO: </div>
+					<div class= "ogg_right"> ${oggetto} </div>
+				</div>
+			<#elseif applicazione=="deli">
+				<div class="contenitore">	
+					<div class = "ogg_left"> OGGETTO: </div>
+					<div class= "ogg_right"> ${oggetto} </div>
+				</div>
+			</#if>			
+			
+			
+			
+			<!-- OGGETTO in Verba -->			
+			<#if applicazione=="verba">			
+				<div class="contenitore">	
+					<div class= "centrato" style="margin-bottom:35px; margin-top:35px"> ${oggetto} </div>
+				</div>
+			</#if>
+			
+			
+			<!-- STRINGHE FISSE in Dete e Deli -->
+			<#if applicazione=="dete">			
+				<div class="contenitore">	
+					<div class = "centrato"> <b>IL DIRETTORE</b> </div>
+				</div>
+			<#elseif applicazione=="deli">			
+				<div class="contenitore">	
+					<div class = "centrato"> <b>IL DIRETTORE GENERALE</b> </div>
+				</div>
+			</#if>
+			
+			
+			<!-- TESTO1 in Pico, Dete e Deli -->			
+			<#if applicazione=="procton">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${testo1}
+					</div>
+				</div>
+			<#elseif applicazione=="dete">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${testo1}
+					</div>
+				</div>
+			<#elseif applicazione=="deli">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${testo1}
+					</div>
+				</div>
+			</#if>			
+			
+			
+			<!-- INTRODUZIONE in Verba -->				
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${introduzione}
+					</div>
+				</div>
+			</#if>				
+			
+			
+			<!-- STRINGA FISSA in Verba -->				
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						delibera in ordine ai seguenti oggetti:
+					</div>
+				</div>
+			</#if>			
+			
+			
+			<!-- DECISIONI in Verba -->	
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${decisione}
+					</div>
+				</div>
+			</#if>					
+			
+			
+			<!-- CONCLUSIONE in Verba -->	
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${conclusione}
+					</div>
+				</div>
+			</#if>
+			
+			<!-- In Dete (DETERMINA) e Deli (DELIBERA) -->
+			<#if applicazione =="dete">	
+				<div class="contenitore">	
+					<div class = "centrato"> ${tipo_corpo} </div>
+				</div>
+			<#elseif applicazione =="deli">	
+				<div class="contenitore">	
+					<div class = "centrato"> ${tipo_corpo} </div>
+				</div>
+			</#if>
+			
+			
+			<!-- testo2 dete-deli-->
+			<#if applicazione == "dete">			
+				<div class="contenitore">
+					<div class="all_left_testo">
+						${testo2}
+					</div>
+				</div>
+			<#elseif applicazione == "deli">			
+				<div class="contenitore">
+					<div class="all_left_testo">
+						${testo2}
+					</div>
+				</div>
+			</#if>
+			
+			<!-- responsabile procedimento dete-deli-->
+			<#if applicazione == "dete">
+				<div class="contenitore">
+					<div class="all_left">
+						<p style="margin-bottom:5px;">Responsabile del procedimento ai sensi della L. 241/90: <br/> ${resproc}  </p> 
+					</div>				
+				</div>
+			<#elseif applicazione == "deli">
+				<div class="contenitore">
+					<div class="all_left">
+						<p style="margin-bottom:5px;">Responsabile del procedimento ai sensi della L. 241/90: <br/> ${resproc}  </p> 
+					</div>			
+				</div>
+			</#if>
+			
+			
+			
+			<!-- FIRMATARI nel caso di Pico, Dete, Verba -->
+			<#if applicazione == "procton">
+				<div class="contenitore">
+					<div class = "all_right_firm" style="margin-bottom:5px; margin-top:15px;"> Firmato digitalmente da:	</div>
+					<div class = "all_right_firm" style="margin-bottom:-7px;  line-height:18px;"> ${firmatario}  </div>
+						<#if alias_pedice_firma??>
+							<div class = "all_right_firm" style="font-size: 10px;"> ${alias_pedice_firma} </div>
+						</#if>
+				</div>
+			<#elseif applicazione =="dete">
+				<div class="contenitore">
+					<div class = "all_right_firm" style="margin-bottom:5px; margin-top:15px;"> Firmato digitalmente da:	</div>
+					<div class = "all_right_firm" style="line-height:18px;"> ${firmatario}  </div>
+				</div>
+			<#elseif applicazione =="verba">
+				<div class="contenitore">
+					<div class = "all_right_firm" style="margin-bottom:5px; margin-top:15px;"> Firmato digitalmente da:	</div>
+					<div class = "all_right_firm" style="line-height:18px;"> ${firmatario}  </div>
+				</div>
+			</#if>
+			
+			<!-- responsabile procedimento pico-->
+			<#if applicazione == "procton">
+				<#if resproc!="\n">
+					<div class="contenitore">
+						<div class="all_left" style="margin-top:25px; font-size:10px; line-height:12px;">
+							Responsabile procedimento: <br/>
+							${resproc} 
+						</div>					
+					</div>
+				</#if>	
+			</#if>
+
+			
+		</div>
+				
+	</body>
+	
+</html>

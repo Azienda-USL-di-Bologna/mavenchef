@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="UTF-8"?>      
+<!--
+Template corpo 908 (Bologna_aosp)
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	
+       <title>TODO supply a title</title>
+	   
+	   <style>
+			@font-face {
+				font-family: arial;
+				font-style: normal;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arial.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: bold;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbd.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: normal;
+				src:url("file:///${resourcePath}/fonts/Arial/ariali.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@font-face {
+				font-family: arial;
+				font-style: italic;
+				font-weight: bold;
+				src:url("file:///${resourcePath}/fonts/Arial/arialbi.ttf");
+				-fs-pdf-font-embed: embed;
+				-fs-pdf-font-encoding: Identity-H;
+			}
+			
+			@page { 
+				@bottom-center { content: element(contenitore_footer) } ; 
+				@top-center { content: element(header, first-except) };
+				size:A4;
+				
+				margin-top:120px;
+				margin-bottom:190px;
+				
+                <#if logo??>
+                    <#if logo=="908_sumap">
+                        margin-top: 160px;
+						margin-bottom:150px;
+					<#elseif logo=="carta_intestata_DPO">
+						margin-top:210px;
+                    </#if>
+                </#if>
+			}
+			
+			@page:first{
+				@top-center{ content:element(header_first)}
+
+			}
+			
+
+			@media print{			
+					  
+				div.header_first{
+					position: running(header_first);
+				}	
+				
+				div.header {
+					position: running(header);
+				}
+				
+				div.content { 
+					poosition:running(content);
+					
+					}  
+				
+				div.contenitore_footer {
+					position: running(contenitore_footer);
+				}
+				
+			}	
+
+/*
+	regole generali
+*/
+			body{
+				font-family: arial; 
+				font-size: 13px;
+				}
+
+			tr{vertical-align:text-top;
+				page-break-inside:avoid;}
+			
+
+			table {border-collapse: separate;
+					-fs-table-paginate: paginate;}
+					
+			div{word-wrap: break-word}
+			
+			td{word-wrap: break-word}
+			
+/*
+	header e footer
+*/
+
+
+
+			div.header_first { 
+				height: 55px; 
+			}
+			
+			div.header{ 
+				height: 70px; 
+				margin-top:-0px;
+			}
+			
+			div.contenitore_footer{ 
+				min-height:90px;
+				//display:block;
+				color:#018749;
+				position:running(contenitore_footer);
+				font-size: 10px;
+				//margin-top: 50px;
+			}
+
+			div.footer_top_img { 
+				height:85px;
+				display:block;
+				color:#018749;
+				font-size: 10px;
+				padding-left:60px;
+			}
+			div.footer_top_text { 
+				vertical-align:text-top;
+				height:20px;
+				display:block;
+				color:#808080;
+				font-size: 10px;
+				padding-left:62px;
+				font-size:8px;
+			}
+			
+			
+			div.footer{
+				position:relative;
+				z-index:10;
+			}
+			
+			div.footer_bottom { 
+				height:90px;
+				display:block;
+				color:#018749;
+				font-size: 10px;
+				position:relative;
+			}
+			
+
+			div.footer_bottom_up{	
+				vertical-align:text-top;
+				//float:left;				
+				//width: 290px;
+				width:580px;
+				height:38px;
+				//top: -70px;
+				//bottom:30px;
+				bottom:48px;
+				position: relative;
+				padding-left:70px;
+			}
+			
+			div.footer_bottom_left{
+				<#if logo?? && logo=="908_sumap">
+					vertical-align:text-top;
+					float:left;				
+					width: 250px;
+					padding-left:60px;
+                <#elseif logo?? && logo=="908_sumcf" >
+                    vertical-align:text-top;
+                    float:left;
+                    width: 250px;
+                    padding-left:60px;
+				<#elseif logo?? && logo=="medicina_lavoro">
+                    vertical-align:text-top;
+                    float:left;
+                    width: 250px;
+                    padding-left:60px;	
+				<#elseif logo?? && logo=="carta_intestata_DPO">
+                    vertical-align:text-top;
+                    float:left;
+                    width: 250px;
+                    padding-left:60px;	
+				<#else>
+					vertical-align:text-top;
+					font:9px;
+					//float:left;				
+					width: 240px;
+					top: 10px;
+					position: absolute;
+					padding-left:70px;
+                </#if>
+				
+			}
+						
+			div.footer_bottom_right{
+				vertical-align:text-top;
+				float:left;
+				width: 290px;
+				padding-left:50px;			
+			}	
+					
+				
+/*
+	contenitori
+*/	
+			div.content { 
+				margin-left: 20px;
+				margin-right: 20px;
+				margin-top:100px;
+			
+			}		
+			
+			div.contenitore{
+				float:left;
+				width:640px;
+				line-height:20px;
+				position:relative;
+			}
+			
+/*
+	altri div
+*/
+			div.centrato{
+				width: 100%;
+				text-align:center;
+				float:left;
+				margin-bottom: 25px;
+				}
+			
+			div.ogg_left{
+				width:90px;
+				padding-left:20px;
+				float:left;
+				margin-bottom: 25px;}
+			
+			div.ogg_right{
+				text-align: justify;
+				width:530px; 
+				float:left;
+				margin-bottom: 25px;
+				}			
+				
+			div.all_left{
+				width:620px;
+				padding-left:20px;
+				float:left;
+				margin-bottom:25px;
+				}
+			
+			div.all_left_testo{
+				width:620px;
+				padding-left:20px;
+				float:left;
+				margin-bottom:25px;
+				text-align:justify;
+				}
+				
+			div.all_left_testo br{
+				display:block;
+				}	
+				
+			div.all_left_testo p{
+				margin:0px;
+				}				
+			
+			div.all_right{
+				float:left;
+				width: 300px;
+				padding-left: 340px;
+				margin-bottom: 25px;
+				}
+				
+				
+			div.all_right_firm{
+				float:left;
+				width: 220px;
+				padding-left: 420px;
+				margin-bottom: 25px;
+				}
+	
+	
+			 
+/*
+	elenchi puntati dei destinatari
+*/
+			ul.dest_pico{list-style-type:none;}
+			
+			li.li_pico{
+				margin-bottom:10px;
+				list-style: none;}
+				
+			li.li_de{
+				margin-left:0px;
+				}
+
+			
+		</style>
+    
+	</head>
+	
+	<body>
+		
+		<div class="header_first">
+			
+			<#if applicazione == "procton">
+				
+				<#if logo??>
+					<#if logo == "908_trapianti">
+						<img src="file:///${resourcePath}/loghi/908_intestazione_compatta_frontespizio.png" style= "width:300px"/>
+						<img src="file:///${resourcePath}/loghi/908_trapianti.png" style= "width:170px; height:58px; position:absolute; top:40px; right:10px;"/>
+					<#elseif logo=="105_sumap" || logo=="908_sumap" || logo=="960_sumap" || logo=="106_sumap">
+						<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna – ISNB (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px; margin-bottom:20px;">Azienda Unità Sanitaria Locale di Imola</div>
+					<#elseif logo=="908_sumcf">
+                        <img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna (IRCCS)</div>
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px; margin-bottom:30px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+					<#elseif logo=="medicina_lavoro" >
+						<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px; margin-bottom:30px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+					<#elseif logo=="carta_intestata_DPO" >
+						<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Imola</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px; margin-bottom:30px;">Montecatone Rehabilitation Institute</div>
+					<#elseif logo=="senza_pedice_universita_908"/>
+                        <img src="file:///${resourcePath}/loghi/908_header_carta_intestata_no_universita.png" style= "width:550px"/>
+                    <#else>
+						<img src="file:///${resourcePath}/loghi/908_header_carta_intestata_semplice.png" style= "width:650px"/>
+					</#if>
+				<#else>
+					<img src="file:///${resourcePath}/loghi/908_intestazione_compatta_lettera.png" style= "width:650px"/>
+				</#if>
+
+			<#elseif applicazione=="deli">
+				<img src="file:///${resourcePath}/loghi/908_header_carta_intestata_dete_deli.png" style= "width:700px"/>
+			<#elseif applicazione=="dete">
+				<img src="file:///${resourcePath}/loghi/908_header_carta_intestata_dete_deli.png" style= "width:700px"/>
+			</#if>
+			
+		</div>
+
+		
+		<div class="header"> 
+			
+			<#if applicazione == "procton">
+				<#if logo??>
+					<#if logo == "908_trapianti">
+						<img src="file:///${resourcePath}/loghi/908_intestazione_compatta_frontespizio.png" style= "width:300px"/>
+						<img src="file:///${resourcePath}/loghi/908_trapianti.png" style= "width:170px; height:58px; position:absolute; top:40px; right:10px;"/>
+					<#elseif logo=="105_sumap" || logo=="908_sumap" || logo=="960_sumap" || logo=="106_sumap">
+						<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px;"/>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna – ISNB (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px; margin-bottom:20px;">Azienda Unità Sanitaria Locale di Imola</div>
+					<#elseif logo=="908_sumcf">
+                        <img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna (IRCCS)</div>
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px; margin-bottom:30px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>	
+					<#elseif logo=="medicina_lavoro">
+						<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna (IRCCS) </div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px; margin-bottom:30px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+					<#elseif logo=="carta_intestata_DPO" >
+						<img src="file:///${resourcePath}/loghi/105_sumap.png" style= "width:250px"/>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Ospedaliero-Universitaria di Bologna (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Bologna - ISNB (IRCCS)</div>
+                        <div style="color: #009943; margin-left: 70px; font-size: 11px;">Azienda Unità Sanitaria Locale di Imola</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px;">Istituto Ortopedico Rizzoli di Bologna (IRCCS)</div>
+						<div style="color: #009943; margin-left: 70px; font-size: 11px; margin-bottom:30px;">Montecatone Rehabilitation Institute</div>
+					<#elseif logo=="senza_pedice_universita_908"/>
+                        <img src="file:///${resourcePath}/loghi/908_header_carta_intestata_no_universita.png" style= "width:550px"/>
+                    <#else>
+						<img src="file:///${resourcePath}/loghi/908_header_carta_intestata_semplice.png" style= "width:650px"/>
+					</#if>
+				<#else>
+					<img src="file:///${resourcePath}/loghi/908_intestazione_compatta_lettera.png" style= "width:650px"/>
+				</#if>
+			<#elseif applicazione=="deli">
+				<img src="file:///${resourcePath}/loghi/908_header_carta_intestata_dete_deli.png" style= "width:400px"/>
+			<#elseif applicazione=="dete">
+				<img src="file:///${resourcePath}/loghi/908_header_carta_intestata_dete_deli.png" style= "width:400px"/>
+			</#if>	
+		</div>
+		
+		<!-- footer (riempito solo nel caso di pico)-->
+		<div class="contenitore_footer">
+			<#if applicazione=="procton">
+				<div class="footer_bottom"> 
+					<!-- caso speciale: SUMAP 908 TUTTA UN'ALTRA STORIA-->
+				    <#if logo?? && logo == "908_sumap" || logo=="908_sumcf" || logo=="medicina_lavoro" || logo=="carta_intestata_DPO">
+						<div class="footer_bottom_right">					
+							<#if pedice_footer_ausl?? >
+                                <span style="font-weight: bold;">
+    								${pedice_footer_ausl}
+                                </span>
+							</#if>					
+						</div>
+						<div class="footer_bottom_right">
+                         <img src="file:///${resourcePath}/loghi/908_pedice.png" style= "width:300px"/>
+						</div>
+					<#elseif logo=="senza_pedice_universita_908">
+                        <div class="footer_bottom_right">
+                            <span style="font-weight: bold;">
+                                ${pedice_footer_ausl}
+                            </span>
+                        </div>
+                        <div class = "footer">                        
+                            <div class="footer_bottom_right">
+                               <img src="file:///${resourcePath}/loghi/908_pedice.png"  style="width:300px"/>
+                            </div>
+                        </div>
+					<#else>
+						<div class="footer_bottom_right">
+    						<span style="font-weight: bold;">
+                                ${pedice_footer_ausl}
+                            </span>			
+						</div>
+						<div class = "footer">
+                             <div class="footer_bottom_right">
+							    <img src="file:///${resourcePath}/loghi/908_pedice.png" style= "width:300px"/>		
+						     </div>
+                        </div>
+					</#if>
+					
+									
+				</div>		
+			</#if>
+		</div>
+		
+		
+		
+        <div class="content">
+            <#if applicazione == "procton">
+                <#if logo??>
+                    <#if logo=="908_sumap" || logo=="908_sumcf" || logo=="medicina_lavoro" || logo=="carta_intestata_DPO">
+                        
+                    </#if>
+                </#if>  
+            </#if>
+			<!-- UNITA' FIRMATARIO, visibile per Dete e Deli e Pico  -->
+			<#if applicazione=="dete">
+				<div class="contenitore"> 
+					<div class="centrato" style="margin-bottom:35px; margin-top:20px">   <!-- style="margin-bottom:35px; margin-top:30px" -->
+						${unita_firmatario}
+					</div>	
+				</div>
+			 <#elseif applicazione=="deli">
+				<div class="contenitore"> 
+					<div class="centrato" style="margin-bottom:35px; margin-top:20px">
+						${unita_firmatario}
+					</div>	
+				</div>
+			<#elseif applicazione=="procton">
+				<div class="contenitore">
+                    <#if logo=="908_sumap" || logo=="908_sumcf" || logo=="medicina_lavoro" || logo=="carta_intestata_DPO">
+						 <div class="all_left" style="margin-bottom:35px; margin-top:50px; padding-left:42px; width:590px; font-size: 10px; line-height:12px; color:#018749; font-weight: bold;">
+							${unita_firmatario}
+						</div>
+                    <#else>
+    					<div class="all_left" style="margin-bottom:35px; margin-top:20px; padding-left:50px; width:590px; font-size: 10px; line-height:12px;">
+	    					${unita_firmatario}						
+		     			</div>	
+                    </#if>
+				</div>
+			</#if>
+
+			
+			<!-- titolo visibile solo nel caso di Dete Deli. (DETERMINAZIONE, DELIBERAZIONE) -->
+			<#if applicazione =="dete">
+				<div class="contenitore"> 
+					<div class="centrato" style="margin-top:20px;">
+						${titolo_corpo}
+					</div>	
+				</div>
+			<#elseif applicazione =="deli">
+				<div class="contenitore"> 
+					<div class="centrato" style="margin-top:20px;">
+						${titolo_corpo}
+					</div>	
+				</div>
+			</#if>
+			
+			
+			
+			<!-- DESTINATARI visibili solo in Pico -->
+			<#if applicazione=="procton">
+				<div class="contenitore">	
+					<div class = "all_right" style="line-height:15px"> 
+						<ul class= "ui_pico">
+							${destinatario}
+						</ul>
+					</div>
+				</div>
+			</#if>
+			 
+			
+
+			<!-- OGGETTO in Pico, Dete e Deli -->
+			<#if applicazione=="procton">
+				<div class="contenitore">	
+					<div class = "ogg_left"> OGGETTO: </div>
+					<div class= "ogg_right"> ${oggetto} </div>
+				</div>
+			<#elseif applicazione=="dete">
+				<div class="contenitore">	
+					<div class = "ogg_left"> OGGETTO: </div>
+					<div class= "ogg_right"> ${oggetto} </div>
+				</div>
+			<#elseif applicazione=="deli">
+				<div class="contenitore">	
+					<div class = "ogg_left"> OGGETTO: </div>
+					<div class= "ogg_right"> ${oggetto} </div>
+				</div>
+			</#if>			
+			
+			
+			
+			<!-- OGGETTO in Verba -->			
+			<#if applicazione=="verba">			
+				<div class="contenitore">	
+					<div class= "centrato" style="margin-bottom:35px; margin-top:35px"> ${oggetto} </div>
+				</div>
+			</#if>
+			
+			
+			<!-- STRINGHE FISSE in Dete e Deli -->
+			<#if applicazione=="dete">			
+				<div class="contenitore">	
+					<div class = "centrato"> <b>IL DIRETTORE</b> </div>
+				</div>
+			<#elseif applicazione=="deli">			
+				<div class="contenitore">	
+					<div class = "centrato"> <b>IL DIRETTORE GENERALE</b> </div>
+				</div>
+			</#if>
+			
+			
+			<!-- TESTO1 in Pico, Dete e Deli -->			
+			<#if applicazione=="procton">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${testo1}
+					</div>
+				</div>
+			<#elseif applicazione=="dete">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${testo1}
+					</div>
+				</div>
+			<#elseif applicazione=="deli">
+				<div class="contenitore">	
+					<div class="all_left_testo" >
+						${testo1}
+					</div>
+				</div>
+			</#if>			
+			
+			
+			<!-- INTRODUZIONE in Verba -->				
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${introduzione}
+					</div>
+				</div>
+			</#if>				
+			
+			
+			<!-- STRINGA FISSA in Verba -->				
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						delibera in ordine ai seguenti oggetti:
+					</div>
+				</div>
+			</#if>			
+			
+			
+			<!-- DECISIONI in Verba -->	
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${decisione}
+					</div>
+				</div>
+			</#if>					
+			
+			
+			<!-- CONCLUSIONE in Verba -->	
+			<#if applicazione=="verba">
+				<div class="contenitore">	
+					<div class="all_left_testo">
+						${conclusione}
+					</div>
+				</div>
+			</#if>
+			
+			<!-- In Dete (DETERMINA) e Deli (DELIBERA) -->
+			<#if applicazione =="dete">	
+				<div class="contenitore">	
+					<div class = "centrato"> ${tipo_corpo} </div>
+				</div>
+			<#elseif applicazione =="deli">	
+				<div class="contenitore">	
+					<div class = "centrato"> ${tipo_corpo} </div>
+				</div>
+			</#if>
+			
+			
+			<!-- testo2 dete-deli-->
+			<#if applicazione == "dete">			
+				<div class="contenitore">
+					<div class="all_left_testo">
+						${testo2}
+					</div>
+				</div>
+			<#elseif applicazione == "deli">			
+				<div class="contenitore">
+					<div class="all_left_testo">
+						${testo2}
+					</div>
+				</div>
+			</#if>
+			
+			<!-- responsabile procedimento dete-deli-->
+			<#if applicazione == "dete">
+				<div class="contenitore">
+					<div class="all_left">
+						<p style="margin-bottom:5px;">Responsabile del procedimento ai sensi della L. 241/90: <br/> ${resproc}  </p> 
+					</div>				
+				</div>
+			<#elseif applicazione == "deli">
+				<div class="contenitore">
+					<div class="all_left">
+						<p style="margin-bottom:5px;">Responsabile del procedimento ai sensi della L. 241/90: <br/> ${resproc}  </p> 
+					</div>			
+				</div>
+			</#if>
+			
+			
+			<!-- FIRMATARI nel caso di Pico, Dete, Verba -->
+			<#if applicazione == "procton">
+				<div class="contenitore">
+					<div class = "all_right_firm" style="margin-bottom:5px; margin-top:15px;"> Firmato digitalmente da:	</div>
+					<div class = "all_right_firm" style="margin-bottom:-7px;  line-height:18px;"> ${firmatario}  </div>
+						<#if alias_pedice_firma??>
+							<div class = "all_right_firm" style="font-size: 10px;"> ${alias_pedice_firma} </div>
+						</#if>
+				</div>
+			<#elseif applicazione =="dete">
+				<div class="contenitore">
+					<div class = "all_right_firm" style="margin-bottom:5px; margin-top:15px;"> Firmato digitalmente da:	</div>
+					<div class = "all_right_firm" style="line-height:18px;"> ${firmatario}  </div>
+				</div>
+			<#elseif applicazione =="verba">
+				<div class="contenitore">
+					<div class = "all_right_firm" style="margin-bottom:5px; margin-top:15px;"> Firmato digitalmente da:	</div>
+					<div class = "all_right_firm" style="line-height:18px;"> ${firmatario}  </div>
+				</div>
+			</#if>
+			
+			<!-- responsabile procedimento pico-->
+			<#if applicazione == "procton">
+				<#if resproc!="\n">
+					<div class="contenitore">
+						<div class="all_left" style="font-size:10px; line-height:12px; margin-top: -25px;">
+							Responsabile procedimento: <br/>
+							${resproc} 
+						</div>					
+					</div>
+				</#if>	
+			</#if>
+
+			
+		</div>
+				
+	</body>
+	
+</html>
